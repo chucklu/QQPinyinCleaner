@@ -20,12 +20,12 @@ namespace QQPinyinCleaner
                 string[] allFiles = Directory.GetFiles(targetFolder);
 
                 // Filter files without extensions using LINQ
-                var filesWithExtensions = allFiles.Where(file => Path.GetExtension(file) == string.Empty);
+                var filesWithoutExtensions = allFiles.Where(file => Path.GetExtension(file) == string.Empty);
 
                 // Display the filtered files
-                Console.WriteLine("Files with extensions:");
+                Console.WriteLine("Files without extensions:");
                 int i = 0;
-                foreach (var file in filesWithExtensions)
+                foreach (var file in filesWithoutExtensions)
                 {
                     i++;
                     Console.WriteLine($"{i:D2}, {file}");

@@ -23,8 +23,8 @@ namespace QQPinyinCleaner
                 var filesWithoutExtensions = allFiles.Where(file => Path.GetExtension(file) == string.Empty);
 
                 // Display the filtered files
-                Console.WriteLine($"Target folder is {targetFolder} .");
-                Console.WriteLine($"{filesWithoutExtensions.Count()} file(s) without extensions:");
+                ConsoleHelper.WriteLine($"Target folder is {targetFolder} .");
+                ConsoleHelper.WriteLine($"{filesWithoutExtensions.Count()} file(s) without extensions:");
                 int i = 0;
                 foreach (var file in filesWithoutExtensions)
                 {
@@ -41,16 +41,16 @@ namespace QQPinyinCleaner
                     {
                         File.Delete(orderedFiles[i]);
                     }
-                    Console.WriteLine($"{filesToDeletCount} file(s) get deleted.");
+                    ConsoleHelper.WriteLine($"{filesToDeletCount} file(s) get deleted.");
                 }
                 else
                 {
-                    Console.WriteLine($"No files to delete.");
+                    ConsoleHelper.WriteLine($"No files to delete.");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred: {ex.Message}");
+                ConsoleHelper.WriteLine($"An error occurred: {ex.Message}");
             }
             finally
             {

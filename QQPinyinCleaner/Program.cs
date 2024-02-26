@@ -23,6 +23,7 @@ namespace QQPinyinCleaner
                 var filesWithoutExtensions = allFiles.Where(file => Path.GetExtension(file) == string.Empty);
 
                 // Display the filtered files
+                Console.WriteLine($"Target folder is {targetFolder} .");
                 Console.WriteLine($"{filesWithoutExtensions.Count()} file(s) without extensions:");
                 int i = 0;
                 foreach (var file in filesWithoutExtensions)
